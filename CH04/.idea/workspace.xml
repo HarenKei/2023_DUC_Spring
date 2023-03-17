@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="990bc58a-916b-4c41-92cd-3bef41348297" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../CH03/src/main/java/config/AppContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH03/src/main/java/config/AppContext.java" afterDir="false" />
+    <list default="true" id="816b20a3-705a-4338-802c-bf06d7efb973" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="AnnotationType" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -25,7 +18,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2N85ZPj0QK8XRTSVHfosQZe1Li2" />
+  <component name="ProjectId" id="2N8zrvOi8vpvl8v8bWUCGv81Wl6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,16 +28,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="chapter03" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="MainForSpring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -69,12 +52,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="990bc58a-916b-4c41-92cd-3bef41348297" name="변경" comment="" />
-      <created>1679032925540</created>
+      <changelist id="816b20a3-705a-4338-802c-bf06d7efb973" name="변경" comment="" />
+      <created>1679060699739</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679032925540</updated>
-      <workItem from="1679032926717" duration="1512000" />
+      <updated>1679060699739</updated>
+      <workItem from="1679060700893" duration="503000" />
     </task>
     <servers />
   </component>

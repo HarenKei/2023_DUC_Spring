@@ -1,8 +1,8 @@
-package chapter03;
+package chapter04;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class MemberDao {
     private static long nextId = 0;

@@ -6,6 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="816b20a3-705a-4338-802c-bf06d7efb973" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/CachedMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/CachedMemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/ChangePasswordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/ChangePasswordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/DuplicationMemberException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/DuplicationMemberException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/MemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/MemberInfoPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/MemberInfoPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/MemberListPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/MemberListPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/MemberNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/MemberNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/MemberPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/MemberPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/MemberRegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/MemberRegisterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/VersionPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/VersionPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH05/src/main/java/chapter04/WrongPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH05/src/main/java/chapter03/WrongPasswordException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +74,7 @@
       <updated>1679060699739</updated>
       <workItem from="1679060700893" duration="597000" />
       <workItem from="1679619642755" duration="428000" />
+      <workItem from="1679620256057" duration="1427000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-package chapter04;
+package chapter03;
 
 public class DuplicationMemberException extends RuntimeException {
     public DuplicationMemberException(String message) {

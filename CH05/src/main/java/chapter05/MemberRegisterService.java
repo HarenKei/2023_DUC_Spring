@@ -1,9 +1,15 @@
-package chapter04;
+package chapter05;
 
+import chapter03.DuplicationMemberException;
+import chapter03.Member;
+import chapter03.MemberDao;
+import chapter03.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+@Component
 public class MemberRegisterService {
 
     @Autowired

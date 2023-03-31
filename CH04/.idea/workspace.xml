@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="816b20a3-705a-4338-802c-bf06d7efb973" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../CH07/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CH07/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CH07/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CH07/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CH07/CH07.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CH07/src/main/java/chapter07/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CH07/src/main/java/chapter07/MemberDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +64,7 @@
       <workItem from="1679060700893" duration="597000" />
       <workItem from="1679619642755" duration="428000" />
       <workItem from="1679620256057" duration="2241000" />
-      <workItem from="1680225217211" duration="629000" />
+      <workItem from="1680225217211" duration="1764000" />
     </task>
     <servers />
   </component>

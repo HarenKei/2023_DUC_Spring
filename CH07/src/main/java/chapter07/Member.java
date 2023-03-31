@@ -1,5 +1,8 @@
 package chapter07;
 
+import org.springframework.transaction.annotation.Transactional;
+
+import java.beans.Transient;
 import java.time.LocalDateTime;
 
 public class Member {
@@ -41,6 +44,7 @@ public class Member {
         return registerDateTime;
     }
 
+    @Transactional
     public void changePassword(String oldPassword, String newPassword) {
         if(!password.equals(oldPassword)) {
             throw new WrongPasswordException();

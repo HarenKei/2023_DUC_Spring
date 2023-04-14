@@ -15,6 +15,7 @@ public class MainForSpring {
     public static void main(String[] args) throws IOException {
 
         // AnnotationConfigApplicationContext를 이용해 스프링 컨테이너 생성
+        // 이는 interface다.
         ctx = new AnnotationConfigApplicationContext(AppContext.class);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

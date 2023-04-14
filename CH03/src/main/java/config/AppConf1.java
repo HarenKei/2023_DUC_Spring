@@ -1,6 +1,6 @@
 package config;
 
-import chapter03.MemberDao;
+import chapter03.
 import chapter03.MemberPrinter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

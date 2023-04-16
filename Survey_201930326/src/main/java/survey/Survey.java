@@ -1,9 +1,12 @@
 package survey;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDateTime;
 
 public class Survey {
-    private Long id; //primary key
+
+    private int id;
     private String q1;
     private String q2;
     private String q3;
@@ -20,11 +23,11 @@ public class Survey {
         this.registerDateTime = registerDateTime;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -51,4 +54,5 @@ public class Survey {
     public LocalDateTime getRegisterDateTime() {
         return registerDateTime;
     }
+
 }

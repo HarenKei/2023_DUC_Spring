@@ -1,5 +1,4 @@
 package config;
-
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +11,7 @@ import survey.SurveyRegisterService;
 @Configuration
 @EnableTransactionManagement
 public class SurveyConfig {
+
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         DataSource ds = new DataSource();
@@ -20,7 +20,7 @@ public class SurveyConfig {
         ds.setUsername("spring");
         ds.setPassword("daelimspring");
         ds.setInitialSize(2);
-        ds.setMaxActive(10);
+        ds.setMaxActive(-1);
         return ds;
     }
 
@@ -32,7 +32,7 @@ public class SurveyConfig {
     }
 
     @Bean
-    public SurveyDao surveyDaoDao() {
+    public SurveyDao surveyDao() {
         return new SurveyDao(dataSource());
     }
 
@@ -40,4 +40,5 @@ public class SurveyConfig {
     public SurveyRegisterService surveyRegisterService() {
         return new SurveyRegisterService();
     }
+
 }

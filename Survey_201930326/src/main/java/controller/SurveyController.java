@@ -1,72 +1,65 @@
-//package controller;
-//
-//import org.springframework.stereotype.Controller;
-//import org.springframework.validation.Errors;
-//import org.springframework.web.bind.annotation.CookieValue;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
-//
-//import javax.servlet.http.Cookie;
-//import javax.servlet.http.HttpServletResponse;
-//import javax.servlet.http.HttpSession;
-//import javax.validation.Valid;
-//
-//@Controller
-//public class SurveyController {
-//
-//    @GetMapping("/surveyFrom")
-//    public String form(SurveyCommand surveyCommand) {/
-//        surveyCommand.setQ1();
-//        surveyCommand.setQ2();
-//        surveyCommand.setQ3();
-//        surveyCommand.setRespondentName();
-//        surveyCommand.setRespondentAge();
-//        if(cookie != null) {
-//            loginCommand.setEmail(cookie.getValue());
-//            loginCommand.setRememberEmail(true);
-//
-//        }
-//        return "login/loginForm";
-//    }
-//
-//    @PostMapping("/login")
-//    public String submit(@Valid LoginCommand loginCommand, Errors errors, HttpSession session, HttpServletResponse response) {
-//        if(errors.hasErrors()) {
-//            return "login/loginForm";
-//        }
-//
-//        try{
-//            AuthInfo authInfo = authService.authenicate(loginCommand.getEmail(), loginCommand.getPassword());
-//            //세션에 로그인 정보 저장
-//            session.setAttribute("authInfo", authInfo);
-//
-//            Cookie rememberCookie = new Cookie("REMEMBER", loginCommand.getEmail());
-//            rememberCookie.setPath("/");
-//            if(loginCommand.isRememberEmail()) {
-//                rememberCookie.setMaxAge(60 * 60 * 24 * 30);
-//            } else {
-//                rememberCookie.setMaxAge(0);
-//            }
-//            response.addCookie(rememberCookie);
-//
-//
-//            return "login/loginSuccess";
-//        }catch (WrongPasswordException ex){
-//            errors.reject("idPasswordNotMatching");
-//            return "login/loginForm";
-//        } catch(MemberNotFoundException ex1) {
-//            errors.reject("idPasswordNotMatching");
-//            return "login/loginForm";
-//
-//        }
-//
-//    }
-//
-//    @GetMapping("/logout")
-//    public String logout(HttpSession session) {
-//        session.invalidate();
-//        return "redirect:/main";
-//    }
-//}
-//
-//
+package controller;
+
+import org.springframework.aop.scope.ScopedProxyUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import survey.Survey;
+import survey.SurveyRegisterService;
+
+import javax.validation.Valid;
+import java.util.List;
+
+//컨트롤러는 클라이언트의 요청을 처리한 뒤 결과를 리턴
+//컨트롤러임을 어노테이션을 통해 명시
+@Controller
+@RequestMapping("/survey")
+public class SurveyController {
+
+    @Autowired
+    private SurveyRegisterService surveyRegisterService;
+
+
+    @GetMapping("/surveyForm")
+    public String surveyForm(Model model) {
+        //매핑을 할때 컨트롤러에서 주소랑 똑같이 함수를 만들라고 함
+        model.addAttribute("surveyForm", new SurveyCommand());
+        //모델 객체가 정확히 뭔지는 육도 모름
+        //모델 객체에 valid도 보낸대요
+        return "/survey/surveyForm";
+    }
+
+    @PostMapping("/surveyComplete")
+    public String surveyComplete(@Valid SurveyCommand req, Errors errors) {
+        if(errors.hasErrors()) {
+            return "/survey/surveyForm";
+        } else {
+            try{
+                surveyRegisterService.regist(req);
+                return "/survey/surveyComplete";
+            } catch(Exception ex){
+                System.out.println("오류났따" + ex);
+                return "/survey/surveyForm";
+            }
+        }
+    }
+
+    @GetMapping("/surveyList")
+    public String surveyList(Model model) {
+        try{
+            List<Survey> surveyList = surveyRegisterService.selectAll();
+            model.addAttribute("list", surveyList);
+        }catch (Exception ex){
+            System.out.println("오류났다 ㅅㅂ" + ex);
+        }
+        return "/survey/surveyList";
+    }
+
+
+}
+
+

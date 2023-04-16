@@ -1,11 +1,18 @@
 package controller;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
-
 import java.time.LocalDateTime;
 
+//@NotBlank : null이 아니여야 하며, 하나 이상의 공백이 아닌 문자 포함 필요
+//@NotEmpty : null이거나 비어있으면 안됨.
+
 public class SurveyCommand {
+    //q1 : 필수항목
+    //q2 : 필수항목
+    //q3 : 공백을 허용하지 않는 필수항목
+    //응답자이름 : 공백을 허용하지 않는 필수항목
+    //응답자 나이 : 1보다 같거나 커야함.
+
     @NotEmpty
     private String q1;
 
@@ -18,14 +25,7 @@ public class SurveyCommand {
     @NotEmpty
     private String respondentName;
 
-    @NotEmpty
     private int respondentAge;
-
-    private LocalDateTime regDate;
-
-    public String getQ1() {
-        return q1;
-    }
 
     public void setQ1(String q1) {
         this.q1 = q1;
@@ -47,8 +47,8 @@ public class SurveyCommand {
         this.respondentAge = respondentAge;
     }
 
-    public void setRegDate(LocalDateTime regDate) {
-        this.regDate = regDate;
+    public String getQ1() {
+        return q1;
     }
 
     public String getQ2() {
@@ -65,9 +65,5 @@ public class SurveyCommand {
 
     public int getRespondentAge() {
         return respondentAge;
-    }
-
-    public LocalDateTime getRegDate() {
-        return regDate;
     }
 }

@@ -1,25 +1,47 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: harenkei
-  Date: 2023/04/14
-  Time: 3:16 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <title>회원가입</title>
 </head>
 <body>
-<h1>설문조사</h1>
-<form>
-    <label>1. 당신의 희망 분야는?</label>
-    <radio>서버개발자</radio>
-    <radio>프론트개발자</radio>
-    <radio>풀스택개발자</radio>
-</form>
+<h2>Step2 - 회원정보 입력</h2>
+<form:form action="surveyComplete" modelAttribute="surveyForm">
+<form action="surveyComplete" method="post">
+    <p>
+        <label for="q1">우왕: </label>
+        <form:radiobutton path="q1" value="server"/> 서버개발자
+        <form:radiobutton path="q1" value="frontend"/> 프론트개발자
+        <form:radiobutton path="q1" value="fullstack"/> 풀스택개발자
+        <form:errors path="q1" />
+    </p>
+    <p>
+        <label for="q2">똥: </label>
+        <form:radiobutton path="q2" value="eclipse"/>  Eclipse
+        <form:radiobutton path="q2" value="intellij"/> IntelliJ
+        <form:radiobutton path="q2" value="vscode"/> VSCode
+        <form:errors path="q2" />
+    </p>
+    <p>
+        <label for="q3">웩: </label>
+        <form:input path="q3"/>
+        <form:errors path="q3" />
+    </p>
+    <p>
+        <label for="respondentName">ㅅㅅ: </label>
+        <form:input path="respondentName"/>
+        <form:errors path="respondentName" />
+    </p>
+
+    <p>
+        <label for="respondentAge">ㅅㅅ: </label>
+        <form:input path="respondentAge"/>
+        <form:errors path="respondentAge" />
+    </p>
+
+    <input type="submit" value="전송" />
+    </form:form>
 </body>
 </html>

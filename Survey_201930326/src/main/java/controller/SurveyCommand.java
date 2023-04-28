@@ -1,6 +1,11 @@
 package controller;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 //@NotBlank : null이 아니여야 하며, 하나 이상의 공백이 아닌 문자 포함 필요
@@ -19,12 +24,13 @@ public class SurveyCommand {
     @NotEmpty
     private String q2;
 
-    @NotEmpty
+    @NotBlank
     private String q3;
 
-    @NotEmpty
+    @NotBlank
     private String respondentName;
 
+    @Min(value = 2)
     private int respondentAge;
 
     public void setQ1(String q1) {

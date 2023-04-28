@@ -4,44 +4,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>회원가입</title>
+    <title>설문조사</title>
 </head>
 <body>
-<h2>Step2 - 회원정보 입력</h2>
-<form:form action="surveyComplete" modelAttribute="surveyForm">
-<form action="surveyComplete" method="post">
+<h2><spring:message code="survey.title"/></h2>
+<form:form action="surveyComplete" method="post" modelAttribute="surveyCommand">
     <p>
-        <label for="q1">우왕: </label>
-        <form:radiobutton path="q1" value="server"/> 서버개발자
-        <form:radiobutton path="q1" value="frontend"/> 프론트개발자
-        <form:radiobutton path="q1" value="fullstack"/> 풀스택개발자
-        <form:errors path="q1" />
+        <label for="q1"><spring:message code="survey.q1"/>: </label>
+        <form:radiobutton path="q1" value="서버" label="서버개발자"/>
+        <form:radiobutton path="q1" value="프론트" label="프론트개발자"/>
+        <form:radiobutton path="q1" value="풀스택" label="풀스택개발자"/>
+        <br>
+        <form:errors path="q1" cssStyle="color: red" />
     </p>
     <p>
-        <label for="q2">똥: </label>
-        <form:radiobutton path="q2" value="eclipse"/>  Eclipse
-        <form:radiobutton path="q2" value="intellij"/> IntelliJ
-        <form:radiobutton path="q2" value="vscode"/> VSCode
-        <form:errors path="q2" />
+        <label for="q2"><spring:message code="survey.q2"/>:</label>
+        <form:radiobutton path="q2" value="Eclipse" label="Eclipse"/>
+        <form:radiobutton path="q2" value="Intellij" label="IntelliJ"/>
+        <form:radiobutton path="q2" value="VSCode" label="VSCode"/>
+        <br>
+        <form:errors path="q2" cssStyle="color: red" />
     </p>
     <p>
-        <label for="q3">웩: </label>
+        <label for="q3"><spring:message code="survey.q3"/>:</label>
         <form:input path="q3"/>
-        <form:errors path="q3" />
+        <br>
+        <form:errors path="q3" cssStyle="color: red" />
     </p>
     <p>
-        <label for="respondentName">ㅅㅅ: </label>
+        <label for="respondentName"><spring:message code="survey.respondentName"/></label>
         <form:input path="respondentName"/>
-        <form:errors path="respondentName" />
+        <br>
+        <form:errors path="respondentName" cssStyle="color: red" />
     </p>
 
     <p>
-        <label for="respondentAge">ㅅㅅ: </label>
+        <label for="respondentAge"><spring:message code="survey.respondentAge"/>: </label>
         <form:input path="respondentAge"/>
-        <form:errors path="respondentAge" />
+        <br>
+        <form:errors path="respondentAge" cssStyle="color: red"  />
     </p>
 
-    <input type="submit" value="전송" />
-    </form:form>
+    <input type="submit" value="전송"/>
+</form:form>
 </body>
 </html>

@@ -15,11 +15,11 @@
 </head>
 <body>
     <h1>응답</h1>
-    <p>1: <spring:message code="login.done" arguments="${surveyCommand.q1}"/></p>
-    <p>2: <spring:message code="login.done" arguments="${surveyCommand.q2}"/></p>
-    <p>3: <spring:message code="login.done" arguments="${surveyCommand.q3}"/></p>
-    <p>응답자 이름: <spring:message code="login.done" arguments="${surveyCommand.respondentName}"/></p>
-    <p>응답자 이름: <spring:message code="login.done" arguments="${surveyCommand.respondentAge}"/></p>
+    <p>1: ${surveyCommand.q1}</p>
+    <p>2: ${surveyCommand.q2}</p>
+    <p>3: ${surveyCommand.q3}</p>
+    <p><spring:message code="survey.respondentName"/> : ${surveyCommand.respondentName}</p>
+    <p><spring:message code="survey.respondentAge"/> ${surveyCommand.respondentAge}</p>
     <a href="<c:url value='/survey/surveyList'/>">[응답 리스트 보기]</a>
 </body>
 </html>

@@ -15,12 +15,13 @@ public class SurveyConfig {
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         DataSource ds = new DataSource();
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
+        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://13.239.60.239:3306/daelim?characterEncoding=utf8");
         ds.setUsername("spring");
         ds.setPassword("daelimspring");
         ds.setInitialSize(2);
-        ds.setMaxActive(-1);
+        ds.setMinEvictableIdleTimeMillis(-1);
+        ds.setMaxActive(10);
         return ds;
     }
 

@@ -53,9 +53,9 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productResponseDto);
     }
 
-    @GetMapping("/listByPrice")
-    public ResponseEntity<List<ProductResponseDto>> listProductByPrice() {
-        List<ProductResponseDto> productResponseDto = productService.listProductByPrice();
+    @GetMapping("/list")
+    public ResponseEntity<List<ProductResponseDto>> list() {
+        List<ProductResponseDto> productResponseDto = productService.list();
         return ResponseEntity.status(HttpStatus.OK).body(productResponseDto);
     }
 
@@ -68,6 +68,12 @@ public class ProductController {
     @GetMapping("/listByStock")
     public ResponseEntity<List<ProductResponseDto>> listProductByStock(int stock) {
         List<ProductResponseDto> productResponseDto = productService.listByStock(stock);
+        return ResponseEntity.status(HttpStatus.OK).body(productResponseDto);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<ProductResponseDto>> allProduct() {
+        List<ProductResponseDto> productResponseDto = productService.allProduct();
         return ResponseEntity.status(HttpStatus.OK).body(productResponseDto);
     }
 

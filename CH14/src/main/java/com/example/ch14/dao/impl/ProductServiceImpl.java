@@ -38,6 +38,8 @@ public class ProductServiceImpl implements ProductService {
         return productResponseDto;
     }
 
+
+
     @Override
     public List<ProductResponseDto> getProductByName(String name) {
         List<Product> product = productDAO.selectProductByName(name);
@@ -97,8 +99,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductResponseDto> listProductByPrice() {
+    public List<ProductResponseDto> list() {
         List<Product> products = productDAO.listProductByPrice();
+        List<ProductResponseDto> productResponseDtoList = products.stream().map(ProductResponseDto::new).collect(Collectors.toList());
+        return productResponseDtoList;
+    }
+
+    @Override
+    public List<ProductResponseDto> allProduct() {
+        List<Product> products = productDAO.allProduct();
         List<ProductResponseDto> productResponseDtoList = products.stream().map(ProductResponseDto::new).collect(Collectors.toList());
         return productResponseDtoList;
     }

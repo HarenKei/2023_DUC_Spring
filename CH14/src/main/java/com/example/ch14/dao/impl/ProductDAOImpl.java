@@ -3,22 +3,35 @@ package com.example.ch14.dao.impl;
 import com.example.ch14.dao.ProductDAO;
 import com.example.ch14.entity.Product;
 import com.example.ch14.repository.ProductRepository;
+import com.example.ch14.repository.QProductRepository;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import static com.example.ch14.entity.QProduct.product;
+
 @Component
 public class ProductDAOImpl implements ProductDAO {
     private final ProductRepository productRepository;
+    private final QProductRepository qProductRepository;
+    private final JPAQueryFactory jpaQueryFactory;
+
+    @Override
+    public List<Product> allProduct() {
+        return jpaQueryFactory.selectFrom(product).where(product.name.eq("abcd")).orderBy(product.price.desc()).fetch();
+    }
 
     @Autowired
-    public ProductDAOImpl(ProductRepository productRepository) {
+    public ProductDAOImpl(ProductRepository productRepository, QProductRepository qProductRepository, JPAQueryFactory jpaQueryFactory) {
         this.productRepository = productRepository;
+        this.qProductRepository = qProductRepository;
+        this.jpaQueryFactory = jpaQueryFactory;
     }
     @Override
     public Product insertProduct(Product product) {
@@ -28,8 +41,13 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public Product selectProduct(Long number) {
-        Product selectProduct = productRepository.getReferenceById(number);
-        return selectProduct;
+//        Product selectProduct = productRepository.getReferenceById(number);
+//        return selectProduct;
+
+        Predicate predicate = product.number.eq(number);
+        Optional<Product> selectProduct = qProductRepository.findOne(predicate);
+
+        return selectProduct.isPresent() ? selectProduct.get() : null;
     }
 
     @Override

@@ -22,6 +22,8 @@ public interface ProductDAO {
 
     List<Product> listByStock(int stock);
 
+    List<Product> allProduct();
+
     boolean existsByNumber(Long number);
 
     Product updateProductName(Long number, String name) throws Exception;

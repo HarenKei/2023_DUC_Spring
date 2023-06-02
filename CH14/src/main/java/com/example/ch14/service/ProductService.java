@@ -18,9 +18,11 @@ public interface ProductService {
 
     List<ProductResponseDto> listProductByName(String name);
 
-    List<ProductResponseDto> listProductByPrice();
+    List<ProductResponseDto> list();
 
     List<ProductResponseDto> listByStock(int stock);
+
+    List<ProductResponseDto> allProduct();
 
     Long countByPrice(int price);
 
